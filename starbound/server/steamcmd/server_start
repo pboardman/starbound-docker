@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Update the server on start
+/server/steamcmd/steamcmd.sh +runscript starbound_update.txt
+
+# Run the starbound server which maintains the starbound server
+/server/steamcmd/starbound/linux32/starbound_server

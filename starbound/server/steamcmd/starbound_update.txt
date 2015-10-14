@@ -1,0 +1,4 @@
+login ${STEAM_USERNAME} ${STEAM_PASSWORD}
+force_install_dir ./starbound
+app_update 211820
+quit
