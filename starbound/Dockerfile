@@ -13,7 +13,6 @@ RUN apt-get -y install lib32gcc1 lib32z1 lib32ncurses5 lib32bz2-1.0 wget supervi
 
 # SteamCMD startup and update files
 COPY ./server/steamcmd/starbound_update.txt /server/steamcmd/
-COPY ./server/steamcmd/update /server/steamcmd/
 COPY ./server/steamcmd/server_start /server/steamcmd/
 
 # Get steamCMD
