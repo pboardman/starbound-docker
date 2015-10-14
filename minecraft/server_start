@@ -1,0 +1,16 @@
+#!/bin/bash
+# Getting the jar and starting the server
+
+if [ ! -f /data/minecraft_server.jar ]
+then
+    curl "https://s3.amazonaws.com/Minecraft.Download/versions/VERSION/minecraft_server.VERSION.jar" -o /data/minecraft_server.jar
+fi
+
+#The server need an eula.txt file with eula=true to start
+if [ ! -f /data/eula.txt ]
+then
+	echo "eula=TRUE" > /data/eula.txt
+fi
+
+# Run supervisor which maintains the minecraft server
+/usr/bin/supervisord
