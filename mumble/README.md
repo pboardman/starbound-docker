@@ -8,4 +8,4 @@ will be stored /data/superuser_password.txt
 
 you can run the image with :
 
-``` sudo docker run -d=true -p=64738:64738 -v=/mnt/mumble:/data hostingshit/mumble /server_start ```
+``` sudo docker run -d=true -p=64738:64738 -v=/mnt/mumble:/data lacsap/mumble /server_start ```
