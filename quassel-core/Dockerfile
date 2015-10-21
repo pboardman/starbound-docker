@@ -10,6 +10,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 
 RUN mkdir /data
 
+COPY start.sh /start.sh
+
 EXPOSE 4242
 VOLUME ["/data"]
-ENTRYPOINT ["quasselcore", "--configdir=/data/"]
+ENTRYPOINT ["/start.sh"]
