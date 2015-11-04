@@ -21,9 +21,6 @@ RUN wget -O - http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -
 # Installing the starbound server
 RUN mkdir /server/steamcmd/starbound
 
-#add the config for the starbound server
-COPY ./server/steamcmd/starbound/linux32/bootstrap.config /server/steamcmd/starbound/linux32/
-
 EXPOSE 21025
-VOLUME      ["/data"]
+VOLUME      ["/server/steamcmd/starbound"]
 ENTRYPOINT  ["/server/steamcmd/server_start"]
