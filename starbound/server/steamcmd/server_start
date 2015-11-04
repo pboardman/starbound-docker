@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Update steam account info to update/install the server
+sed -i "s/USERNAME/${STEAM_USERNAME}/g" /server/steamcmd/starbound_update.txt
+sed -i "s/PASSWORD/${STEAM_PASSWORD}/g" /server/steamcmd/starbound_update.txt
+
 # Update the server on start
 /server/steamcmd/steamcmd.sh +runscript starbound_update.txt
 
-# Run the starbound server which maintains the starbound server
-/server/steamcmd/starbound/linux32/starbound_server
+# Run the starbound server
+cd /server/steamcmd/starbound/linux32
+./starbound_server
