@@ -2,7 +2,7 @@
 
 ## How to use
 
-Run ``` docker run -d --name hyperboria-node -v /PATH/ON/YOUR/MACHINE:/etc/cjdns lacsap/hyperboria ``` and the container will generate a default config
+Run ``` docker run -d --privileged --net=host --name hyperboria-node -v /PATH/ON/YOUR/MACHINE:/etc/cjdns lacsap/hyperboria ``` and the container will generate a default config
 where you mounted ``` /etc/cjdns ``` (at ``` /PATH/ON/YOUR/MACHINE ```) and exit.
 
 Edit this config file then restart the container with: ``` docker start hyperboria-node ```
