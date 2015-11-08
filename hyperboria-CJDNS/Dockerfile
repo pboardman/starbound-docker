@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 
 # Getting CJDNS
 RUN mkdir -p /usr/src
-RUN git clone https://github.com/hyperboria/cjdns.git /usr/src/cjdns
+RUN git clone https://github.com/cjdelisle/cjdns.git /usr/src/cjdns
 
 WORKDIR /usr/src/cjdns
 RUN ./do
