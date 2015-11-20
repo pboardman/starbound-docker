@@ -11,10 +11,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
   pwgen
 
 # load configs in the image
-ADD ./etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
-ADD ./etc/supervisor/conf.d/murmurd.conf /etc/supervisor/conf.d/murmurd.conf
-ADD ./etc/mumble-server.ini /etc/mumble-server.ini
-ADD ./server_start /server_start
+COPY etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+COPY etc/supervisor/conf.d/murmurd.conf /etc/supervisor/conf.d/murmurd.conf
+COPY etc/mumble-server.ini /data/mumble-server.ini
+COPY server_start /server_start
 
 # Make server_start executable
 RUN chmod +x /server_start
