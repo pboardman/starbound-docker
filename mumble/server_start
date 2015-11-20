@@ -10,6 +10,12 @@ then
     chown -R mumble-server:mumble-server /data/database/
 fi
 
+# Copy default config if not present
+if [ ! -f /data/mumble-server.ini ]
+then
+    cp /etc/mumble-server.ini /data/mumble-server.ini
+    chown -R mumble-server:mumble-server /data/
+fi
 
 # Set Mumble SuperUser password and echo it
 if [ ! -f /data/superuser_password.txt ]
@@ -17,8 +23,6 @@ then
     SUPERUSER_PASSWORD=`pwgen -c -n -1 15`
     echo $SUPERUSER_PASSWORD > /data/superuser_password.txt
     murmurd -ini /etc/mumble-server.ini -supw $SUPERUSER_PASSWORD
-    sleep 3
-    echo "The password for SuperUser is  $SUPERUSER_PASSWORD"
 fi
 
 

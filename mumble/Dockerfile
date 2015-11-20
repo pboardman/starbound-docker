@@ -13,14 +13,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 # load configs in the image
 COPY etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 COPY etc/supervisor/conf.d/murmurd.conf /etc/supervisor/conf.d/murmurd.conf
-COPY etc/mumble-server.ini /data/mumble-server.ini
+COPY etc/mumble-server.ini /etc/mumble-server.ini
 COPY server_start /server_start
 
 # Make server_start executable
 RUN chmod +x /server_start
 
-
-# /data will contain mumble data (you define the location of /data when you run the image)
 EXPOSE 64738
 VOLUME  ["/data"]
 CMD     ["/server_start"]
