@@ -2,14 +2,14 @@
 # Dockerfile to build a minecraft server that works with supervisor
 ############################################################
 
-from debian:8
+from java:8
 
 # Change the memory limit and version of the minecraft server
 ENV MEMORY 1024
 ENV VERSION 1.8.8
 
 RUN apt-get update
-RUN apt-get --yes install curl openjdk-7-jre-headless supervisor
+RUN apt-get --yes install curl supervisor
 
 # Load scripts in the image
 COPY etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
