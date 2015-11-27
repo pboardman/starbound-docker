@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build a forge minecraft server that works with supervisor
+# Dockerfile to build a forge minecraft server
 ############################################################
 
 from java:8
