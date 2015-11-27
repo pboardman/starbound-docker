@@ -1,0 +1,21 @@
+#!/bin/bash
+# Getting the jar and starting the server
+
+FORGE_VERSION=`wget -O - http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json | grep "\"${MCVERSION}-${FORGEVERSION}\"" | cut -f6 -d" " | sed s/\"//g | sed s/,//g`
+
+if [ ! -f forge-${MCVERSION}-${FORGE_VERSION}-${MCVERSION}-universal.jar ]
+then
+    curl "https://s3.amazonaws.com/Minecraft.Download/versions/${MCVERSION}/minecraft_server.${MCVERSION}.jar" -o /data/minecraft_server.${MCVERSION}.jar
+    curl "http://files.minecraftforge.net/maven/net/minecraftforge/forge/${MCVERSION}-$FORGE_VERSION-${MCVERSION}/forge-${MCVERSION}-$FORGE_VERSION-${MCVERSION}-installer.jar" -o /data/forge_installer.jar
+    cat "ICI : http://files.minecraftforge.net/maven/net/minecraftforge/forge/${MCVERSION}-$FORGE_VERSION-${MCVERSION}/forge-${MCVERSION}-$FORGE_VERSION-${MCVERSION}-installer.jar FIN"
+    java -jar forge_installer.jar --installServer
+fi
+
+#The server need an eula.txt file with eula=true to start
+if [ ! -f /data/eula.txt ]
+then
+	echo "eula=TRUE" > /data/eula.txt
+fi
+
+# Run supervisor which maintains the minecraft server
+java -Xms1024M -Xmx1024M -jar forge-${MCVERSION}-${FORGE_VERSION}-${MCVERSION}-universal.jar
