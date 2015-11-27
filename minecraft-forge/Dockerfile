@@ -6,8 +6,8 @@ from java:8
 
 # Change the memory limit and version of the minecraft server
 ENV MEMORY 1024
-ENV MCVERSION 1.8.8
-ENV FORGEVERSION latest
+ENV MCVERSION 1.8
+ENV FORGEVERSION recommended
 
 RUN apt-get update
 RUN apt-get --yes install curl

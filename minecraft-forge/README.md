@@ -10,4 +10,4 @@ you can run the image with :
 ``` sudo docker run -d -p=25565:25565 -v=/mnt/minecraft:/data lacsap/minecraft-forge ```
 
 You can change the version and memory limit of the minecraft server with the MCVERSION and MEMORY ENV.
-You can change FORGEVERSION to switch between latest and recommended build. (default is latest)
+You can change FORGEVERSION to switch between latest and recommended build.
