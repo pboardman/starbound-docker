@@ -8,5 +8,5 @@ sed -i "s/PASSWORD/${STEAM_PASSWORD}/g" /server/steamcmd/starbound_update.txt
 /server/steamcmd/steamcmd.sh +runscript starbound_update.txt
 
 # Run the starbound server
-cd /server/steamcmd/starbound/linux32
+cd /server/steamcmd/starbound/linux
 ./starbound_server
