@@ -1,3 +1,3 @@
-#Dockerfiles
+NO LONGER MAINTAINED.
 
-All my Dockerfiles consolidated in one repository.
+Check out my *-docker repositories for updated versions
