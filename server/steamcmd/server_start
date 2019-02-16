@@ -7,6 +7,8 @@ sed -i "s/PASSWORD/${STEAM_PASSWORD}/g" /server/steamcmd/starbound_update.txt
 # Update the server on start
 /server/steamcmd/steamcmd.sh +runscript starbound_update.txt
 
+# Modified version of this script: https://www.youtube.com/watch?v=LwDQaye2TZs
+
 # Cleaning the mods folder
 rm /server/steamcmd/starbound/mods/*.pak
 rmdir --ignore-fail-on-non-empty ./starbound/steamapps/workshop/content/211820/*
