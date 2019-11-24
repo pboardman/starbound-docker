@@ -4,7 +4,7 @@
 
 After building the docker file you can run the image for the first time with :
 
-``` docker run -d -p=21025:21025 -v=/path/to/starbound/data:/server/steamcmd/starbound STEAM_USERNAME=username STEAM_PASSWORD=password lacsap/starbound ```
+``` docker run -d -p=21025:21025 -v=/path/to/starbound/data:/server/steamcmd/starbound -e STEAM_USERNAME=username -e STEAM_PASSWORD=password lacsap/starbound ```
 
 ## Additional info
 

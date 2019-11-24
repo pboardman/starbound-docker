@@ -21,6 +21,9 @@ do
  ln -r -s /server/steamcmd/starbound/steamapps/workshop/content/211820/${dir##*/}/*.pak /server/steamcmd/starbound/mods/${dir##*/}.pak
 done
 
+# Above code sometime produce a *.pak file which crash the server so we remove it
+rm -f '/server/steamcmd/starbound/mods/*.pak'
+
 # Run the starbound server
 cd /server/steamcmd/starbound/linux
 ./starbound_server
